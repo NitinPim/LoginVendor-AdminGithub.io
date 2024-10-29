@@ -1,0 +1,188 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VendorLayout</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Asset/css/Style.css" rel="stylesheet" />
+    <style>
+        .icon-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            color: #ffe300;
+            background: #8c8c8c;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            margin: 0px 9px;
+        }
+
+            .icon-button:hover {
+                cursor: pointer;
+            }
+
+            .icon-button:active {
+                background: #cccccc;
+            }
+
+        .icon-button__badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 25px;
+            height: 25px;
+            background: red;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 40px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar">
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="sidebar mb-2" style="background-color:#ededf3">
+                    <a href="#"> <img src="" width="100%" /> </a>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item my-1 active">
+                        <a href="/Admin/VendorDashboard/Index" class="sidebar-link fs-5">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-item my-1">
+                        <a href="" class="sidebar-link fs-5">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            Vender Excel
+                        </a>
+                    </li>
+                    @*<li class="sidebar-item my-1">
+                            <a href="/Admin/VendorDashboard/CreateNetwork" class="sidebar-link fs-5">
+                                <i class="fa-solid fa-list pe-2"></i>
+                                Create Network
+                            </a>
+                        </li>*@
+                    <li class="sidebar-item my-1">
+                        <a href="" class="sidebar-link fs-5">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            Create Group
+                        </a>
+                    </li>
+                    <li class="sidebar-item my-1">
+                        <a href="/Admin/VendorDashboard/MyGroup" class="sidebar-link fs-5">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            My Groups
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom top-bar">
+                <button class="btn" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon" style="color: #000000;"></span>
+                </button>
+                <h3 id="username"></h3>
+                <div class="navbar-collapse navbar" style="justify-content:flex-end">
+                    @*<a href="/Idlestockpile/Login" class="btn btn-success">Sign-out</a>*@
+                </div>
+                <div class="col-md-5 ps-2 mt-2">
+                    @*<div class="input-group mb-3 py-2">
+                            <input type="text" class="form-control p-2 rounded-pill" placeholder="Search ...." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary ms-2" type="button">Search</button>
+                            </div>
+
+                        </div>*@
+                </div>
+
+
+                <div class="navbar-collapse navbar" style="justify-content:flex-end">
+
+                    <div class="profile px-3">
+                        @*<i class="fa-solid fa-bell fs-2 pe-3" style="color:#019bce"></i>*@
+
+                        <div class="mt-2">
+                            <a class="icon-button" id="btnnotificationvendor">
+                                <span class="material-icons">notifications</span>
+                                @*<span class="icon-button__badge" id="count"></span>*@
+                                <span class="icon-button__badge" id="countNotification"></span>
+
+                            </a>
+                        </div>
+
+
+
+                        @*<div class="img-box">
+                                <img src="https://i.postimg.cc/BvNYhMHS/user-img.jpg" alt="some user image">
+                            </div>*@
+                        @*<div class="user">
+                                <h3><i class="fa-solid fa-sort-down"></i></h3>
+                            </div>*@
+
+                    </div>
+
+                    <div class="btn-group dropstart">
+                        <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item"><i class="fa-solid fa-user"></i>&nbsp; Profile</a></li>
+                            <li><a href="#" class="dropdown-item"><i class="fa-solid fa-gear"></i>&nbsp;Settings</a></li>
+                            <li><a href="#" class="dropdown-item"><i class="fa-solid fa-circle-question"></i>&nbsp;Help</a></li>
+                            <li><a href="~/Idlestockpile/Login" class="dropdown-item"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Sign Out</a></li>
+                        </ul>
+                    </div>
+
+                    @*<div class="menu">
+                            <ul>
+                                <li><a href="#"><i class="fa-solid fa-user"></i>&nbsp; Profile</a></li>
+                                <li><a href="#"><i class="fa-solid fa-gear"></i>&nbsp;Settings</a></li>
+                                <li><a href="#"><i class="fa-solid fa-circle-question"></i>&nbsp;Help</a></li>
+                                <li><a href="~/Idlestockpile/Login"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Sign Out</a></li>
+                            </ul>
+                        </div>*@
+
+                    @*<a href="~/Idlestockpile/Login" class="btn btn-success"><i class="fa-solid fa-right-from-bracket me-2"></i>Sign-out</a>*@
+                </div>
+                @*<input type="hidden" id="UserId" value="@Session["UserId"]" />
+                <input type="hidden" id="UserRoleId" value="@Session["UserRoleId"]" />*@
+            </nav>
+            @RenderBody()
+        </div>
+    </div>
+    <script src="~/Content/Asset/js/bootstrap.bundle.minNew.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+</body>
+</html>
